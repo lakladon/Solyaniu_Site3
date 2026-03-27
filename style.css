@@ -1,0 +1,146 @@
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+body {
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    animation: fadeIn 2.5s ease-out forwards;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.95);
+    padding: 25px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.side-text {
+    font-size: 16px;
+    letter-spacing: 3px;
+    color: #666;
+    text-transform: uppercase;
+}
+
+/* ОГРОМНОЕ ЛОГО */
+.dc-logo {
+    height: 80px; 
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+    transition: 0.5s ease;
+}
+
+.dc-logo:hover { transform: scale(1.1) rotate(5deg); }
+
+.centered-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Стальные сердца (64 шт) */
+.heart {
+    position: absolute;
+    font-size: 24px;
+    background: linear-gradient(145deg, #f0f0f0, #888, #222);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    animation: fall 14s linear infinite;
+    opacity: 0;
+}
+
+/* Распределяем 64 сердца по горизонтали и времени */
+.heart:nth-child(8n) { left: 5%; animation-delay: 0s; }
+.heart:nth-child(8n+1) { left: 18%; animation-delay: 2s; }
+.heart:nth-child(8n+2) { left: 32%; animation-delay: 4s; }
+.heart:nth-child(8n+3) { left: 45%; animation-delay: 6s; }
+.heart:nth-child(8n+4) { left: 58%; animation-delay: 8s; }
+.heart:nth-child(8n+5) { left: 72%; animation-delay: 10s; }
+.heart:nth-child(8n+6) { left: 85%; animation-delay: 12s; }
+.heart:nth-child(8n+7) { left: 95%; animation-delay: 1s; }
+
+@keyframes fall {
+    0% { top: -10%; opacity: 0; transform: rotate(0deg); }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 110%; opacity: 0; transform: rotate(720deg); }
+}
+
+.profile-card {
+    background: rgba(10, 10, 10, 0.95);
+    width: 500px;
+    padding: 70px;
+    border-radius: 40px;
+    text-align: center;
+    border: 1px solid #222;
+    backdrop-filter: blur(25px);
+    box-shadow: 0 0 60px rgba(255, 255, 255, 0.03);
+}
+
+.pentagram {
+    width: 150px;
+    animation: spin 30s linear infinite;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.15));
+}
+
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+.username {
+    font-size: 50px;
+    margin: 35px 0;
+    letter-spacing: 4px;
+    animation: float 4s ease-in-out infinite;
+    text-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
+}
+
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
+.coder-info { font-size: 20px; color: #555; margin-bottom: 50px; }
+
+.wanna-talk {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 18px 55px;
+    border-radius: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.wanna-talk:hover { background: #fff; color: #000; box-shadow: 0 0 40px #fff; transform: scale(1.05); }
+
+.telegram-container {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.tg-qr { width: 150px; border-radius: 20px; filter: brightness(1.1); }
+
+.telegram-username {
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 20px;
+    background: linear-gradient(90deg, #fff, #444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stars { position: fixed; width: 100%; height: 100%; background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/123163/stars.png') repeat; z-index: -1; opacity: 0.2; }
